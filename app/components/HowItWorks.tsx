@@ -1,7 +1,17 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import { PenTool, Database, Bot, Users, CheckCircle } from 'lucide-react'
+import PreorderModal from './PreorderModal'
+import { recordPreorderClick } from '../../lib/supabase'
 
 export default function HowItWorks() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handlePreorderClick = async () => {
+    await recordPreorderClick('ai-work-tracker')
+    setIsModalOpen(true)
+  }
   const steps = [
     {
       icon: PenTool,
@@ -97,12 +107,22 @@ export default function HowItWorks() {
             <p className="text-gray-600 mb-8">
               설정은 5분이면 충분합니다. 30일 무료 체험으로 AI 업무 트래커의 강력함을 경험해보세요.
             </p>
-            <button className="bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transition-colors">
+            <button 
+              onClick={handlePreorderClick}
+              className="bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transition-colors"
+            >
               무료 체험 시작하기
             </button>
           </div>
         </div>
       </div>
+
+      {/* Preorder Modal */}
+      <PreorderModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        service="ai-work-tracker"
+      />
     </section>
   )
 } 

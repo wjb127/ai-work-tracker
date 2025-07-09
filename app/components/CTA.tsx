@@ -1,7 +1,17 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import { ArrowRight, Check } from 'lucide-react'
+import PreorderModal from './PreorderModal'
+import { recordPreorderClick } from '../../lib/supabase'
 
 export default function CTA() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handlePreorderClick = async () => {
+    await recordPreorderClick('ai-work-tracker')
+    setIsModalOpen(true)
+  }
   const benefits = [
     '💰 첫 달 무료 + 200% 환불 보장',
     '⚡ 설치 3분, 효과 즉시 확인',
@@ -40,7 +50,10 @@ export default function CTA() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <button className="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-all transform hover:scale-105 flex items-center shadow-lg animate-pulse">
+            <button 
+              onClick={handlePreorderClick}
+              className="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-all transform hover:scale-105 flex items-center shadow-lg animate-pulse"
+            >
               💰 지금 내 돈 되찾기 (무료)
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
@@ -111,6 +124,13 @@ export default function CTA() {
           </svg>
         </div>
       </div>
+
+      {/* Preorder Modal */}
+      <PreorderModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        service="ai-work-tracker"
+      />
     </section>
   )
 } 

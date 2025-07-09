@@ -1,7 +1,17 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import { Check, Star, Zap, Building2 } from 'lucide-react'
+import PreorderModal from './PreorderModal'
+import { recordPreorderClick } from '../../lib/supabase'
 
 export default function Pricing() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handlePreorderClick = async () => {
+    await recordPreorderClick('ai-work-tracker')
+    setIsModalOpen(true)
+  }
   const plans = [
     {
       name: 'Starter',
@@ -143,7 +153,10 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <button className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors ${plan.buttonStyle}`}>
+              <button 
+                onClick={handlePreorderClick}
+                className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors ${plan.buttonStyle}`}
+              >
                 {plan.buttonText}
               </button>
             </div>
@@ -175,6 +188,13 @@ export default function Pricing() {
           </div>
         </div>
       </div>
+
+      {/* Preorder Modal */}
+      <PreorderModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        service="ai-work-tracker"
+      />
     </section>
   )
 } 
