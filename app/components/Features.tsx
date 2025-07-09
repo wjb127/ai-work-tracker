@@ -38,14 +38,8 @@ export default function Features() {
   return (
     <section id="features" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header - Stories */}
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="bg-blue-50 rounded-lg p-6 mb-8 max-w-4xl mx-auto">
-            <p className="text-blue-800 italic text-lg mb-4">
-              "매일 야근하는데 성과는 그대로... 도대체 시간이 어디로 가는 거지?"
-            </p>
-            <p className="text-blue-600 font-semibold">- 삼성전자 김팀장님의 고민</p>
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             <span className="text-red-600">시간 도둑</span>을 잡는 6가지 방법
           </h2>
@@ -71,92 +65,74 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Customer Testimonials - Stories */}
+        {/* Benefits Highlight */}
         <div className="mt-20 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            💰 실제 돈을 되찾은 기업들의 생생한 이야기
+            💰 AI 업무 트래커로 얻을 수 있는 핵심 혜택
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-500">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-lg">삼</span>
-                </div>
-                <div className="ml-3">
-                  <div className="font-semibold text-gray-900">김민수 팀장</div>
-                  <div className="text-sm text-gray-500">삼성전자 SW개발팀</div>
-                </div>
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <span className="text-green-600 font-bold text-lg">💰</span>
               </div>
               <div className="bg-green-100 p-3 rounded-lg mb-4">
-                <p className="text-green-800 font-bold text-center">월 1,200만원 절약!</p>
+                <p className="text-green-800 font-bold text-center">비용 절약</p>
               </div>
-              <p className="text-gray-600 text-sm italic">
-                "매일 3시간씩 하던 불필요한 회의를 AI가 찾아냈어요. 팀원 12명 × 월 20일 = 720시간 절약. 정말 충격적이었습니다!"
+              <p className="text-gray-600 text-sm">
+                불필요한 회의와 중복 업무를 식별하여 인건비를 절약하고, 효율적인 업무 배분으로 리소스를 최적화합니다.
               </p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-yellow-500">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
-                  <span className="text-yellow-600 font-bold text-lg">카</span>
-                </div>
-                <div className="ml-3">
-                  <div className="font-semibold text-gray-900">이서연 매니저</div>
-                  <div className="text-sm text-gray-500">카카오 플랫폼팀</div>
-                </div>
+              <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                <span className="text-yellow-600 font-bold text-lg">⏰</span>
               </div>
               <div className="bg-yellow-100 p-3 rounded-lg mb-4">
-                <p className="text-yellow-800 font-bold text-center">야근 80% 감소!</p>
+                <p className="text-yellow-800 font-bold text-center">시간 관리</p>
               </div>
-              <p className="text-gray-600 text-sm italic">
-                "AI가 업무 우선순위를 정해주니까 정말 중요한 일만 하게 됐어요. 9시 퇴근이 6시 퇴근으로 바뀌었습니다!"
+              <p className="text-gray-600 text-sm">
+                AI가 업무 패턴을 분석하여 시간 낭비 요소를 찾아내고, 개인별 최적의 업무 스케줄을 제안합니다.
               </p>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-orange-500">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                  <span className="text-orange-600 font-bold text-lg">쿠</span>
-                </div>
-                <div className="ml-3">
-                  <div className="font-semibold text-gray-900">박준혁 리드</div>
-                  <div className="text-sm text-gray-500">쿠팡 로지스틱스</div>
-                </div>
+              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                <span className="text-orange-600 font-bold text-lg">📊</span>
               </div>
               <div className="bg-orange-100 p-3 rounded-lg mb-4">
-                <p className="text-orange-800 font-bold text-center">실수 90% 감소!</p>
+                <p className="text-orange-800 font-bold text-center">데이터 기반 의사결정</p>
               </div>
-              <p className="text-gray-600 text-sm italic">
-                "반복 업무에서 실수하던 걸 AI가 미리 경고해줘요. 물류 사고 비용만 월 800만원 절약했습니다!"
+              <p className="text-gray-600 text-sm">
+                객관적인 데이터를 바탕으로 팀 성과를 측정하고, 개선점을 명확히 파악하여 전략적 의사결정을 지원합니다.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Stats Section - Concrete & Unexpected */}
-        <div className="mt-12 bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl p-8 text-white">
+        {/* Key Features Highlight */}
+        <div className="mt-12 bg-gradient-to-r from-blue-600 to-primary-600 rounded-2xl p-8 text-white">
           <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold mb-2">⚡ 충격적인 실제 데이터</h3>
-            <p className="text-red-100">지금 이 순간에도 당신의 돈이 사라지고 있습니다</p>
+            <h3 className="text-2xl font-bold mb-2">✨ 핵심 기능</h3>
+            <p className="text-blue-100">AI 업무 트래커의 주요 특징들</p>
           </div>
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="bg-white/10 rounded-lg p-4">
-              <div className="text-4xl font-bold mb-2">₩847억</div>
-              <div className="text-red-100">이미 되찾은 돈</div>
-              <div className="text-xs text-red-200 mt-1">500개 기업 누적</div>
+              <div className="text-4xl font-bold mb-2">🤖</div>
+              <div className="text-blue-100">AI 분석</div>
+              <div className="text-xs text-blue-200 mt-1">업무 패턴 자동 분석</div>
             </div>
             <div className="bg-white/10 rounded-lg p-4">
-              <div className="text-4xl font-bold mb-2">147분</div>
-              <div className="text-red-100">매일 사라지는 시간</div>
-              <div className="text-xs text-red-200 mt-1">= 월 520만원 손실</div>
+              <div className="text-4xl font-bold mb-2">📊</div>
+              <div className="text-blue-100">시각화</div>
+              <div className="text-xs text-blue-200 mt-1">직관적인 대시보드</div>
             </div>
             <div className="bg-white/10 rounded-lg p-4">
-              <div className="text-4xl font-bold mb-2">73%</div>
-              <div className="text-red-100">업무시간 낭비율</div>
-              <div className="text-xs text-red-200 mt-1">한국 평균 (충격)</div>
+              <div className="text-4xl font-bold mb-2">👥</div>
+              <div className="text-blue-100">팀 관리</div>
+              <div className="text-xs text-blue-200 mt-1">팀 생산성 최적화</div>
             </div>
             <div className="bg-white/10 rounded-lg p-4">
-              <div className="text-4xl font-bold mb-2">14일</div>
-              <div className="text-red-100">ROI 달성 기간</div>
-              <div className="text-xs text-red-200 mt-1">업계 최단 기록</div>
+              <div className="text-4xl font-bold mb-2">🔒</div>
+              <div className="text-blue-100">보안</div>
+              <div className="text-xs text-blue-200 mt-1">엔터프라이즈급 보안</div>
             </div>
           </div>
         </div>
