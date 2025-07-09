@@ -1,5 +1,5 @@
 import React from 'react'
-import { PenTool, Database, Bot, Users } from 'lucide-react'
+import { PenTool, Database, Bot, Users, CheckCircle } from 'lucide-react'
 
 export default function HowItWorks() {
   const steps = [
