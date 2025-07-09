@@ -87,6 +87,51 @@ ai-work-tracker/
 - **폰트**: Inter
 - **아이콘**: Lucide React
 
+## 사전예약 시스템
+
+### 기능
+- 모든 CTA 버튼 클릭 시 사전예약 모달 표시
+- 이메일 수집 및 마케팅 동의 수집
+- Supabase 연동 (설정 시) 또는 로컬 스토리지 저장
+
+### 설정 방법
+1. `.env.local` 파일에 Supabase 정보 입력:
+```bash
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+```
+
+2. Supabase에서 테이블 생성:
+```sql
+-- 버튼 클릭 이벤트 저장용
+CREATE TABLE preorder_clicks (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  service TEXT NOT NULL,
+  clicked_at TIMESTAMP DEFAULT now()
+);
+
+-- 이메일 + 마케팅 수신 동의 저장용
+CREATE TABLE preorders (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  service TEXT NOT NULL,
+  email TEXT NOT NULL,
+  marketing_opt_in BOOLEAN DEFAULT false,
+  created_at TIMESTAMP DEFAULT now()
+);
+```
+
+### 개발 모드에서 데이터 확인
+Supabase가 설정되지 않은 경우 로컬 스토리지에 저장됩니다.
+
+브라우저 개발자 도구 콘솔에서:
+```javascript
+// 사전예약 데이터 확인
+JSON.parse(localStorage.getItem('preorders') || '[]')
+
+// 클릭 데이터 확인
+JSON.parse(localStorage.getItem('preorder_clicks') || '[]')
+```
+
 ## 개발 노트
 
 현재 모든 데이터는 컴포넌트 내부에 하드코딩되어 있습니다. 향후 백엔드 연동 시 API 호출로 교체 예정입니다. 

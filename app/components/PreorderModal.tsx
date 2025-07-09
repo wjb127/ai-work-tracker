@@ -46,6 +46,7 @@ export default function PreorderModal({ isOpen, onClose, service }: PreorderModa
       setIsSuccess(true)
       reset()
     } catch (error) {
+      console.error('Preorder submission error:', error)
       setSubmitError('저장 중 오류가 발생했습니다. 다시 시도해주세요.')
     } finally {
       setIsSubmitting(false)
