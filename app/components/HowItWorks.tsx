@@ -1,31 +1,31 @@
 import React from 'react'
-import { PenTool, Zap, TrendingUp, CheckCircle } from 'lucide-react'
+import { PenTool, Database, Bot, Users } from 'lucide-react'
 
 export default function HowItWorks() {
   const steps = [
     {
       icon: PenTool,
-      title: '업무 기록',
-      description: '팀원들이 일일 업무를 시간대별로 기록하고 난이도와 유형을 선택합니다.',
-      details: ['시간대별 업무 로그', '업무 난이도 선택', '업무 유형 분류', '진행 상황 업데이트']
+      title: '📝 일일 업무 입력',
+      description: '매일 업무 내용, 소요 시간, 난이도를 간편하게 입력하고 프로젝트별로 분류합니다.',
+      details: ['업무 내용 상세 기록', '정확한 시간 측정', '5단계 난이도 선택', '카테고리별 분류']
     },
     {
-      icon: Zap,
-      title: 'AI 분석',
-      description: 'AI가 축적된 데이터를 분석하여 업무 패턴과 비효율성을 자동으로 탐지합니다.',
-      details: ['패턴 분석', '비효율성 탐지', '리소스 낭비 식별', '개선점 도출']
+      icon: Database,
+      title: '📊 데이터 축적 & 시각화',
+      description: '입력된 데이터가 자동으로 축적되어 엑셀 형태 테이블과 차트로 시각화됩니다.',
+      details: ['자동 데이터 저장', '엑셀 형태 관리', '시각화 차트 생성', '트렌드 분석']
     },
     {
-      icon: TrendingUp,
-      title: '인사이트 제공',
-      description: '분석 결과를 직관적인 대시보드로 시각화하여 실행 가능한 인사이트를 제공합니다.',
-      details: ['대시보드 시각화', '성과 지표 분석', '개선 제안', '목표 설정']
+      icon: Bot,
+      title: '🤖 AI 분석 & 개인 리포트',
+      description: '축적된 데이터를 AI가 분석하여 개인 맞춤형 생산성 개선 조언을 제공합니다.',
+      details: ['업무 패턴 분석', '생산성 개선 조언', '시간 최적화 제안', '개인 맞춤 인사이트']
     },
     {
-      icon: CheckCircle,
-      title: '생산성 향상',
-      description: '데이터 기반의 의사결정으로 팀의 생산성을 지속적으로 개선합니다.',
-      details: ['생산성 측정', '목표 달성 추적', '지속적 개선', '성과 모니터링']
+      icon: Users,
+      title: '👥 팀 관리 & 팀 리포트',
+      description: '팀 리더는 팀원들의 데이터를 조회하고 팀 전체 AI 분석 리포트를 확인할 수 있습니다.',
+      details: ['팀원 데이터 조회', '팀 생산성 분석', '업무 배분 최적화', '팀 AI 리포트']
     }
   ]
 
@@ -35,10 +35,10 @@ export default function HowItWorks() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            간단한 4단계로 시작하세요
+            🚀 실제 서비스 사용 플로우
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            복잡한 설정 없이 바로 시작할 수 있는 직관적인 프로세스로 팀의 생산성을 향상시키세요.
+            개인 업무 입력부터 팀 리더 관리까지, 실제 서비스가 어떻게 작동하는지 확인해보세요.
           </p>
         </div>
 
