@@ -34,9 +34,9 @@ export default function CTA() {
           <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
             <span className="text-red-200 font-bold">하루 늦을 때마다 20만원 손실!</span>
             <br />
-            삼성, LG, 카카오가 이미 되찾은 <span className="text-yellow-300 font-bold">847억원</span>
+            AI로 업무 효율성을 높이고 <span className="text-yellow-300 font-bold">비용을 절약</span>하세요
             <br />
-            <span className="text-white font-semibold">다음 주자는 바로 당신입니다.</span>
+            <span className="text-white font-semibold">지금 바로 시작해보세요.</span>
           </p>
 
           {/* Benefits */}
@@ -98,16 +98,16 @@ export default function CTA() {
           {/* Trust Indicators */}
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-white mb-2">500+</div>
-              <div className="text-primary-200">활성 기업</div>
+              <div className="text-3xl font-bold text-white mb-2">AI</div>
+              <div className="text-primary-200">스마트 분석</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-white mb-2">10,000+</div>
-              <div className="text-primary-200">사용자</div>
+              <div className="text-3xl font-bold text-white mb-2">24/7</div>
+              <div className="text-primary-200">실시간 모니터링</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-white mb-2">99.9%</div>
-              <div className="text-primary-200">서비스 가동률</div>
+              <div className="text-3xl font-bold text-white mb-2">맞춤형</div>
+              <div className="text-primary-200">개인화 솔루션</div>
             </div>
           </div>
         </div>

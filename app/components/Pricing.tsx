@@ -179,7 +179,7 @@ export default function Pricing() {
             </div>
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <h4 className="font-semibold text-gray-900 mb-3">데이터 보안은 어떻게 보장되나요?</h4>
-              <p className="text-gray-600 text-sm">SOC 2 Type II 인증과 ISO 27001 표준을 준수하며, 모든 데이터는 암호화되어 안전하게 보관됩니다.</p>
+              <p className="text-gray-600 text-sm">엔터프라이즈급 보안 시스템을 통해 모든 데이터는 암호화되어 안전하게 보관됩니다.</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <h4 className="font-semibold text-gray-900 mb-3">온프레미스 배포가 가능한가요?</h4>

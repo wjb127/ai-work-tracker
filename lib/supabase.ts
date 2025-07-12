@@ -1,9 +1,14 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://your-project.supabase.co'
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'your-anon-key'
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+// Supabase 클라이언트는 환경 변수가 제대로 설정된 경우에만 생성
+export const supabase = (supabaseUrl && supabaseAnonKey && 
+  supabaseUrl !== 'your-supabase-url' && 
+  supabaseAnonKey !== 'your-supabase-anon-key') 
+  ? createClient(supabaseUrl, supabaseAnonKey) 
+  : null
 
 // 로컬 저장된 사전예약 데이터 조회 함수 (개발용)
 export const getLocalPreorders = () => {
@@ -26,7 +31,7 @@ export const getLocalClicks = () => {
 // 사전예약 클릭 이벤트 저장
 export const recordPreorderClick = async (service: string) => {
   // Supabase가 설정되지 않은 경우 로컬 저장소에 저장
-  if (!supabaseUrl || supabaseUrl === 'your-supabase-url') {
+  if (!supabase) {
     console.log('Preorder click recorded locally:', { service, timestamp: new Date().toISOString() })
     
     // 로컬 스토리지에 저장
@@ -51,18 +56,20 @@ export const recordPreorderClick = async (service: string) => {
 // 사전예약 정보 저장
 export const savePreorder = async (service: string, email: string, marketingOptIn: boolean) => {
   // Supabase가 설정되지 않은 경우 로컬 저장소에 저장
-  if (!supabaseUrl || supabaseUrl === 'your-supabase-url') {
+  if (!supabase) {
     console.log('Preorder saved locally:', { service, email, marketingOptIn, timestamp: new Date().toISOString() })
     
     // 로컬 스토리지에 저장
-    const existingData = localStorage.getItem('preorders') || '[]'
-    const preorders = JSON.parse(existingData)
-    preorders.push({ service, email, marketing_opt_in: marketingOptIn, created_at: new Date().toISOString() })
-    localStorage.setItem('preorders', JSON.stringify(preorders))
+    if (typeof window !== 'undefined') {
+      const existingData = localStorage.getItem('preorders') || '[]'
+      const preorders = JSON.parse(existingData)
+      preorders.push({ service, email, marketing_opt_in: marketingOptIn, created_at: new Date().toISOString() })
+      localStorage.setItem('preorders', JSON.stringify(preorders))
+    }
     return
   }
 
-  const { error } = await supabase
+  const { error } = await supabase!
     .from('preorders')
     .insert([{ service, email, marketing_opt_in: marketingOptIn }])
   

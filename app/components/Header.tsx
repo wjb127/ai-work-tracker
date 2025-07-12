@@ -21,13 +21,7 @@ export default function Header() {
             <a href="#features" className="text-gray-600 hover:text-primary-600 transition-colors">기능</a>
             <a href="#how-it-works" className="text-gray-600 hover:text-primary-600 transition-colors">작동방식</a>
             <a href="#screenshots" className="text-gray-600 hover:text-primary-600 transition-colors">스크린샷</a>
-            <a href="#pricing" className="text-gray-600 hover:text-primary-600 transition-colors">가격</a>
           </nav>
-
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="text-gray-600 hover:text-primary-600 transition-colors">로그인</button>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -45,12 +39,6 @@ export default function Header() {
               <a href="#features" className="text-gray-600 hover:text-primary-600 transition-colors">기능</a>
               <a href="#how-it-works" className="text-gray-600 hover:text-primary-600 transition-colors">작동방식</a>
               <a href="#screenshots" className="text-gray-600 hover:text-primary-600 transition-colors">스크린샷</a>
-              <a href="#pricing" className="text-gray-600 hover:text-primary-600 transition-colors">가격</a>
-              <div className="pt-4 border-t border-gray-200">
-                <button className="w-full text-left text-gray-600 hover:text-primary-600 transition-colors mb-2">
-                  로그인
-                </button>
-              </div>
             </nav>
           </div>
         )}
