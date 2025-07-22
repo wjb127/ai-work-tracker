@@ -85,7 +85,7 @@ export default function PreorderModal({ isOpen, onClose, service }: PreorderModa
               </h3>
               <p className="text-gray-600">
                 사전예약 시 <span className="font-bold text-green-600">30% 할인 혜택</span>과 
-                <span className="font-bold text-blue-600"> 우선 이용권</span>을 받으실 수 있습니다!
+                <span className="font-bold text-primary-600"> 우선 이용권</span>을 받으실 수 있습니다!
               </p>
             </div>
 

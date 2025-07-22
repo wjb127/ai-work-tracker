@@ -46,7 +46,7 @@ export default function Hero() {
   return (
     <section className="relative pt-20 pb-16 overflow-hidden">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-purple-50 dark:from-gray-900 dark:to-purple-900/20">
         <div className="absolute inset-0 animated-gradient opacity-30"></div>
       </div>
       
@@ -88,7 +88,7 @@ export default function Hero() {
             ease: "easeInOut",
             delay: 2
           }}
-          className="absolute bottom-20 left-1/4 w-24 h-24 bg-blue-400/10 rounded-full blur-xl"
+          className="absolute bottom-20 left-1/4 w-24 h-24 bg-purple-400/10 rounded-full blur-xl"
         />
       </div>
 
@@ -99,7 +99,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300"
+            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-white dark:bg-gray-800 border border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300"
           >
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">AI 기반 업무 혁신 솔루션</span>
@@ -161,7 +161,7 @@ export default function Hero() {
             >
               <span className="relative z-10">무료 체험 시작하기</span>
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-blue-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                              <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-800 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </motion.button>
             
             <motion.button 
@@ -184,7 +184,7 @@ export default function Hero() {
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                className="group text-center p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all duration-300"
+                className="group text-center p-6 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-750 transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ duration: 0.2 }}
               >

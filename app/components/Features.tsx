@@ -19,8 +19,8 @@ export default function Features() {
       icon: Brain,
       title: '🧠 AI 돈 계산기',
       description: '회의 30분 = 15만원, 메일 확인 10분 = 5만원. AI가 모든 활동을 돈으로 환산해서 보여줍니다. 돈이 새는 구멍을 실시간으로 발견!',
-      color: 'from-blue-400 to-purple-600',
-      bgColor: 'bg-blue-50 dark:bg-blue-900/20'
+      color: 'from-purple-400 to-purple-600',
+      bgColor: 'bg-purple-50 dark:bg-purple-900/20'
     },
     {
       icon: BarChart3,
@@ -91,8 +91,7 @@ export default function Features() {
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                {/* Gradient Overlay - Removed for better text visibility */}
                 
                 {/* Icon */}
                 <motion.div 
@@ -123,7 +122,7 @@ export default function Features() {
         {/* Benefits Highlight */}
         <AnimatedSection className="mt-20" delay={0.6}>
           <motion.div 
-            className="bg-gradient-to-r from-green-50 via-blue-50 to-purple-50 dark:from-green-900/20 dark:via-blue-900/20 dark:to-purple-900/20 rounded-3xl p-8 border border-gray-200 dark:border-gray-700"
+            className="bg-gradient-to-r from-green-50 to-purple-50 dark:from-green-900/20 dark:to-purple-900/20 rounded-3xl p-8 border border-gray-200 dark:border-gray-700"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
@@ -186,7 +185,7 @@ export default function Features() {
         {/* Stats Section */}
         <AnimatedSection className="mt-20" delay={0.8}>
           <motion.div 
-            className="bg-gradient-to-r from-blue-600 via-primary-600 to-purple-600 rounded-3xl p-8 text-white relative overflow-hidden"
+            className="bg-gradient-to-r from-primary-600 via-primary-700 to-purple-600 rounded-3xl p-8 text-white relative overflow-hidden"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
@@ -204,7 +203,7 @@ export default function Features() {
                 transition={{ duration: 0.6 }}
               >
                 ✨ 실제 사용자들의 성과</motion.h3>
-                          <p className="text-blue-100 text-lg">실제 사용자들이 달성한 놀라운 성과들</p>
+                          <p className="text-white text-lg">실제 사용자들이 달성한 놀라운 성과들</p>
             </div>
             
             <div className="relative z-10 grid md:grid-cols-4 gap-6">
@@ -240,7 +239,7 @@ export default function Features() {
               ].map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/20 transition-all duration-300"
+                  className="bg-white/20 rounded-2xl p-6 hover:bg-white/30 transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -5 }}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -254,8 +253,8 @@ export default function Features() {
                       duration={2500}
                     />
                   </div>
-                  <div className="text-lg font-semibold text-blue-100 mb-1">{stat.label}</div>
-                  <div className="text-sm text-blue-200">{stat.description}</div>
+                  <div className="text-lg font-semibold text-white mb-1">{stat.label}</div>
+                  <div className="text-sm text-gray-200">{stat.description}</div>
                 </motion.div>
               ))}
             </div>
