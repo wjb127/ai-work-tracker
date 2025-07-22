@@ -39,9 +39,14 @@ export default function CountUp({
         
         // Easing function for smooth animation
         const easeOutQuart = 1 - Math.pow(1 - progress, 4)
-        const current = Math.floor(startValue + (endValue - startValue) * easeOutQuart)
+        const current = startValue + (endValue - startValue) * easeOutQuart
         
-        setCount(current)
+        // Handle decimal places
+        const formattedCurrent = Number.isInteger(endValue) 
+          ? Math.floor(current)
+          : Math.round(current * 10) / 10
+        
+        setCount(formattedCurrent)
         
         if (progress < 1) {
           requestAnimationFrame(updateCount)

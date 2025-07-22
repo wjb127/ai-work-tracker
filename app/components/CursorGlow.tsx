@@ -6,22 +6,30 @@ import { motion } from 'framer-motion'
 export default function CursorGlow() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isHovering, setIsHovering] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkIsMobile = () => {
+      setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+    }
+    
+    checkIsMobile()
+    
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
 
-    const handleMouseEnter = (e: MouseEvent) => {
+    const handleMouseEnter = (e: Event) => {
       const target = e.target as HTMLElement
-      if (target.closest('button, a, [role="button"]')) {
+      if (target?.closest('button, a, [role="button"]')) {
         setIsHovering(true)
       }
     }
 
-    const handleMouseLeave = (e: MouseEvent) => {
+    const handleMouseLeave = (e: Event) => {
       const target = e.target as HTMLElement
-      if (target.closest('button, a, [role="button"]')) {
+      if (target?.closest('button, a, [role="button"]')) {
         setIsHovering(false)
       }
     }
@@ -36,6 +44,11 @@ export default function CursorGlow() {
       document.removeEventListener('mouseleave', handleMouseLeave, true)
     }
   }, [])
+
+  // Don't render on mobile devices
+  if (isMobile) {
+    return null
+  }
 
   return (
     <>
