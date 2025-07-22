@@ -8,7 +8,7 @@ export default function Loading() {
       <div className="text-center">
         {/* Animated Logo */}
         <motion.div
-          className="w-20 h-20 mx-auto mb-8 bg-gradient-to-r from-primary-400 to-blue-600 rounded-2xl flex items-center justify-center"
+          className="w-20 h-20 mx-auto mb-8 bg-gradient-to-r from-primary-400 to-primary-600 rounded-2xl flex items-center justify-center"
           animate={{ 
             rotate: [0, 360],
             scale: [1, 1.1, 1]
@@ -55,7 +55,7 @@ export default function Loading() {
         <div className="mt-8 w-64 mx-auto">
           <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-gradient-to-r from-primary-400 to-blue-600 rounded-full"
+              className="h-full bg-gradient-to-r from-primary-400 to-primary-600 rounded-full"
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ duration: 3, ease: "easeInOut" }}

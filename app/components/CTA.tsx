@@ -23,7 +23,7 @@ export default function CTA() {
     <section className="py-20 bg-gradient-to-br from-primary-600 to-primary-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center text-white">
-          <div className="inline-block bg-red-500 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6 animate-pulse">
+          <div className="inline-block bg-red-500 rounded-full px-4 py-2 text-sm font-medium mb-6 animate-pulse">
             🚨 경고! 지금 이 순간에도 돈이 사라지고 있습니다
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
@@ -42,7 +42,7 @@ export default function CTA() {
           {/* Benefits */}
           <div className="grid md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
             {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+              <div key={index} className="bg-white/20 rounded-xl p-4 text-center">
                 <span className="text-white font-medium text-sm">{benefit}</span>
               </div>
             ))}

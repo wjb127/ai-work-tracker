@@ -23,7 +23,7 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
           ? 'glass dark:glass-dark shadow-lg' 
-          : 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm'
+          : 'bg-white dark:bg-gray-900'
       } border-b border-gray-200 dark:border-gray-700`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}

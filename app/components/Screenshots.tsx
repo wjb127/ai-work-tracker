@@ -269,7 +269,7 @@ export default function Screenshots() {
                             </div>
                             <div className="w-1/2 h-12 bg-white rounded-lg shadow-sm border flex items-center justify-center">
                               <div className="text-center">
-                                <div className="text-sm font-bold text-blue-600">3명</div>
+                                <div className="text-sm font-bold text-primary-600">3명</div>
                                 <div className="text-xs text-gray-500">활성 멤버</div>
                               </div>
                             </div>
